@@ -1,0 +1,7 @@
+import app from "./src/app";
+
+const PORT = 3030;
+
+app.listen(PORT, () => {
+    console.log("Servidor rodando em http://localhost:3030")
+})
