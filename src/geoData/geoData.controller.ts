@@ -5,7 +5,7 @@ export const search = async (req: Request, res: Response) => {
     const city = req.body.city
     const date = req.body.date
 
-    const result = await service.searchCity(city, date)
+    const result = await service.searchCity(city, date, req)
 
     return res.status(200).json(result)
 }
