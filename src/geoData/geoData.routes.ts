@@ -1,11 +1,10 @@
 import { Router, Request, Response } from 'express';
 import validator from '../shared/middlewares/validator';
-import { test } from './geoData.schema';
+import { user } from './geoData.schema';
+import * as controller from './geoData.controller'
 
 const geoData = Router();
 
-geoData.post("/", validator({ body: test }), (req: Request, res: Response) => {
-    res.status(200).json({ status: "success", message: "Geo route ok" });
-});
+geoData.post("/", validator({ body: user }), controller.search);
 
 export default geoData;

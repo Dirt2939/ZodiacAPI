@@ -12,9 +12,8 @@ C:\ZodiacAPI
 
 PLANEJAMENTO DE MÓDULOS
 
-1. Birth
-2. Zodiac
-3. GeoData
+1. Zodiac
+2. GeoData
 
 PLANEJAMENTO 
 
