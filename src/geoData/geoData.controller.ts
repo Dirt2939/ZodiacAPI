@@ -7,5 +7,7 @@ export const search = async (req: Request, res: Response) => {
 
     const result = await service.searchCity(city, date, req)
 
+    console.log(result)
+
     return res.status(200).json(result)
 }

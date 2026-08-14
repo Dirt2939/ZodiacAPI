@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="pegarPais()">Pegar País</button>
+    <input type="text" id="city" value="Esteio">
+    <input type="text" id="date" value="2000-02-06T12:44:23">
+    <h1>O país é: </h1>
+</body>
+<script>
+    const pegarPais = async () => {
+        try {
+            const userData = JSON.stringify({
+                city: document.getElementById("city").value,
+                date: document.getElementById("date").value,
+            })
+
+            const url = "https://5rvphb71-3030.brs.devtunnels.ms/geo"
+
+            const resposta = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: userData
+            });
+
+            const data = await resposta.json();
+            console.log(data.country)
+            document.querySelector("h1").textContent = `O país é: ${data.country ?? 'Não encontrado'}`;
+
+        } catch (error) {
+            console.error(error);
+            document.querySelector("h1").textContent = "O país é: erro";
+        }
+    }
+</script>
+
+</html>

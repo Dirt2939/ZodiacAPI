@@ -5,6 +5,7 @@
     "geo-tz": "^8.1.8",
     "geoip-lite": "^1.4.10",
     "luxon": "^3.7.2",
+    "swisseph": "^0.5.17",
     "zod": "^4.4.3"
   },
   "devDependencies": {
